@@ -1,0 +1,167 @@
+# Brand Guidelines: TalentScan AI
+
+## 1) Brand Summary
+- **Personality Adjectives**: Precise, Trustworthy, Modern, Intelligent, Calming.
+- **Never Feel Like**: Cluttered, Loud, Unprofessional, Hyperactive.
+- **Positioning Statement**: Seamless AI-driven talent evaluation right in your browser, keeping your hiring decisions secure, local, and visual.
+
+## 2) Color System
+- **Backgrounds**:
+  - Base: `#121212` (Matte Black)
+  - Surface: `#1E1E1E` (Warm Charcoal)
+  - Elevated: `#2A2A2A` (Lighter Grey for cards/modals)
+- **Text**:
+  - Primary: `#E4E4E7` (Zinc 200, high contrast, readable)
+  - Secondary: `#A1A1AA` (Zinc 400)
+  - Muted: `#71717A` (Zinc 500)
+- **Borders/Dividers**: `#2E2E33`
+- **Accent Color**:
+  - Primary: `#6366F1` (Indigo 500, premium and calm)
+  - Primary Hover: `#4F46E5` (Indigo 600)
+- **Semantic Colors**:
+  - Success (Shortlist): `#10B981` (Emerald 500)
+  - Warning (Review): `#F59E0B` (Amber 500)
+  - Error (Reject): `#EF4444` (Red 500)
+  - Info (Idle/Processing): `#3B82F6` (Blue 500)
+
+*Contrast Guidance*: Accent colors and semantic tags must pair with `#FFFFFF` or `#0F0F10` depending on luminance. Use surface text `#E4E4E7` over elevated surfaces. Do not use pure white (#FFF) on pure black (#000) to avoid screen glare.
+
+## 3) Typography
+- **Primary Font**: *Outfit* (Google Font) or *Inter* (Fallback).
+  - Fallback Stack: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`.
+- **Numeric Font**: *Outfit* or standard monospace (`Courier New, Courier, monospace`) for matching percentages and scores.
+- **Type Scale**:
+  - H1: `2rem` (32px), Bold (700) - Title pages
+  - H2: `1.5rem` (24px), Semi-Bold (600) - Section headers
+  - H3: `1.25rem` (20px), Semi-Bold (600) - Card titles
+  - Body: `1rem` (16px), Regular (400) - General text
+  - Small/Muted: `0.875rem` (14px), Regular (400) - Secondary details, tags, subtext
+- **Usage Rules**: Use H1 only once per view. Use H2 for primary layout containers. Apply numerical spacing adjustments on monetary and numeric displays.
+
+## 4) Spacing + Layout
+- **Spacing Scale (4px/8px-based)**:
+  - `xs`: `4px` (0.25rem)
+  - `sm`: `8px` (0.5rem)
+  - `md`: `16px` (1rem)
+  - `lg`: `24px` (1.5rem)
+  - `xl`: `32px` (2rem)
+- **Grid Layout**:
+  - Mobile: Single column grid. Spacing is `md` (16px).
+  - Desktop: 12-column grid. Main container `max-width: 1280px` with sidebars or side-by-side dashboard cards.
+- **Cards**: Padding `lg` (24px), border-radius `12px`, elevation is subtle matte shadow (`0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3)`).
+
+## 5) Components
+- **Buttons**:
+  - *Primary*: Background `#6366F1`, text `#FFFFFF`, border none. Hover state `#4F46E5`. Focus-visible outline `2px solid #6366F1` with `offset 2px`.
+  - *Secondary*: Background `#2A2A2A`, text `#E4E4E7`, border `1px solid #2E2E33`. Hover `#3E3E42`.
+  - *Ghost*: Background transparent, text `#A1A1AA`. Hover text `#E4E4E7` + bg `#2A2A2A`.
+  - *Destructive*: Background `#EF4444`, text `#FFFFFF`. Hover `#DC2626`.
+- **Inputs**:
+  - Background `#1E1E1E`, text `#E4E4E7`, border `1px solid #2E2E33`, radius `8px`, padding `10px 14px`.
+  - Focus state: border `#6366F1`, box-shadow `0 0 0 2px rgba(99, 102, 241, 0.2)`.
+  - Disabled state: opacity `0.5`, cursor not-allowed.
+  - Error state: border `#EF4444`.
+- **Chips**:
+  - Padding `4px 10px`, radius `9999px`, size `12px`, font-weight `500`.
+  - Shortlist chip: bg `rgba(16, 185, 129, 0.15)`, text `#10B981`.
+  - Reject chip: bg `rgba(239, 68, 68, 0.15)`, text `#EF4444`.
+  - Review chip: bg `rgba(245, 158, 11, 0.15)`, text `#F59E0B`.
+- **Cards**: Background `#1E1E1E`, border `1px solid #2E2E33`, radius `12px`, padding `24px`.
+- **List Rows**: Background `#1E1E1E`, border-bottom `1px solid #2E2E33`, padding `16px 24px`. Hover state background `#252528`.
+- **Modal/Drawer**: Background `#1E1E1E`, overlay `rgba(0, 0, 0, 0.75)` backdrop filter blur `4px`, border `1px solid #2E2E33`, radius `16px`, transition slide up.
+- **Toast/Snackbar**: Background `#2A2A2A`, border `1px solid #6366F1` (or `#10B981` for actions), text `#E4E4E7`, radius `8px`, spacing bottom-right positioning, action button text `#6366F1` hover underline.
+
+## 6) Iconography + Imagery
+- **Icons**: Line-drawn (outline) style with a standard stroke width of `2px` and rounded terminals (`round` linecap).
+- **Imagery**: Keep layout extremely clean. Visualizations should use SVGs or Canvas directly (no stock illustrations).
+
+## 7) Motion
+- **Transitions**: Timing `150ms`, Easing `cubic-bezier(0.4, 0, 0.2, 1)`.
+- **Animations**: Slide-in/fade-in for toasts, fade-in for modals.
+- **Reduced Motion**:
+  ```css
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  ```
+
+## 8) Accessibility Checklist
+- **Focus States**: High contrast outline on focus. Do not hide default outlines unless custom outlines are provided.
+- **Hit Targets**: Minimum interactive element size of `44px x 44px`.
+- **Keyboard Navigation**: All interactive components must be focusable via `Tab` key, modals must handle `Escape` to close, and forms must submit on `Enter`.
+
+## 9) Design Tokens Output
+
+### CSS Variables
+```css
+:root {
+  --bg-base: #121212;
+  --bg-surface: #1E1E1E;
+  --bg-elevated: #2A2A2A;
+  --text-primary: #E4E4E7;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --border-color: #2E2E33;
+  --accent-primary: #6366F1;
+  --accent-hover: #4F46E5;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  --font-primary: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-numeric: 'Outfit', monospace;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+```
+
+### JSON Token Object
+```json
+{
+  "theme": "matte-black",
+  "colors": {
+    "background": {
+      "base": "#121212",
+      "surface": "#1E1E1E",
+      "elevated": "#2A2A2A"
+    },
+    "text": {
+      "primary": "#E4E4E7",
+      "secondary": "#A1A1AA",
+      "muted": "#71717A"
+    },
+    "border": "#2E2E33",
+    "accent": {
+      "primary": "#6366F1",
+      "hover": "#4F46E5"
+    },
+    "semantic": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    }
+  },
+  "fonts": {
+    "primary": "Outfit, system-ui, -apple-system, sans-serif",
+    "numeric": "Outfit, monospace"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "12px",
+    "xl": "16px"
+  },
+  "shadow": "0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3)",
+  "transition": "150ms cubic-bezier(0.4, 0, 0.2, 1)"
+}
+```
